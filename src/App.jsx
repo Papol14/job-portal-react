@@ -1,10 +1,12 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Cards from "./components/Cards";
 const App = () => {
   return (
     <div>
       <Navbar />
       <Hero />
+      <Cards />
       {/*<!-- Browse Jobs -->*/}
       <section className="bg-blue-50 px-4 py-10">
         <div className="container-xl lg:container m-auto">
