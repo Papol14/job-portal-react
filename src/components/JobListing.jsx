@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaMapMarker } from "react-icons/fa";
 import { useState } from "react";
 
@@ -24,7 +25,7 @@ const JobListing = ({ job }) => {
           className="mb-2 text-indigo-500 rounded-md hover:text-indigo-800"
           onClick={() => setShowFullDescription((prevState) => !prevState)}
         >
-          {!showFullDescription ? "See Less" : "See More"}
+          {!showFullDescription ? "See More" : "See Less"}
         </button>
 
         <h3 className="text-indigo-500 mb-2">{job.salary}</h3>
@@ -46,6 +47,16 @@ const JobListing = ({ job }) => {
       </div>
     </div>
   );
+};
+
+JobListing.propTypes = {
+  job: PropTypes.shape({
+    type: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    salary: PropTypes.string,
+    location: PropTypes.string,
+  }).isRequired,
 };
 
 export default JobListing;
